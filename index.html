@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            margin-top: 150px;
+            margin-left: 40px;
+        }
+
+        .card {
+            text-align: center;
+            border: 1px solid black;
+            padding: 10px;
+            position: relative;
+            width: 370px;
+            height: 330px;
+        }
+
+        .card img {
+            width: 300px;
+            height: 300px;
+        }
+
+        span {
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 10px 0;
+        }
+
+        .heart {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            margin-bottom: 15px;
+            color: red;
+
+        }
+
+        .whatsapp i {
+            color: green;
+
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="card">
+                <span class="heart" onclick="addtofav(this)"><i class="fa-regular fa-heart"></i></span>
+                <img src="images/th (1).jpeg" alt="">
+                <br>
+                <span class="whatsapp" onclick="changefontsize(this)"><i class="fa-brands fa-whatsapp"></i> Share</span>
+            </div>
+            <div class="card">
+                <span class="heart" onclick="addtofav(this)"><i class="fa-regular fa-heart"></i></span>
+                <img src="images/th (2).jpeg" alt="">
+                <br>
+                <span class="whatsapp" onclick="changefontsize(this)"><i class="fa-brands fa-whatsapp"></i> Share</span>
+            </div>
+            <div class="card">
+                <span class="heart" onclick="addtofav(this)"><i class="fa-regular fa-heart"></i></span>
+                <img src="images/th.jpeg" alt="">
+                <br>
+                <span class="whatsapp" onclick="changefontsize(this)"><i class="fa-brands fa-whatsapp"></i> Share</span>
+            </div>
+        </div>
+
+        <script>
+            function addtofav(element) {
+                const icon = element.querySelector('i');
+
+                if (icon.classList.contains('fa-regular')) {
+                    icon.classList.remove('fa-regular');
+                    icon.classList.add('fa-solid');
+                    element.style.fontSize = "2rem";
+                } else {
+                    icon.classList.remove('fa-solid');
+                    icon.classList.add('fa-regular');
+                    element.style.fontSize = "1.5rem";
+                }
+            }
+            function changefontsize(element) {
+                const icon = element.querySelector('i');
+
+                if (icon.style.fontSize === "2rem") {
+                    icon.style.fontSize = "1.5rem";
+                } else {
+                    icon.style.fontSize = "2rem";
+                }
+            }
+
+        </script>
+
+    </body>
+
+</html>
